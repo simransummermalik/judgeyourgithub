@@ -16,7 +16,7 @@ export default function RoastReport() {
     setData(null)
 
     try {
-      console.log("[v0] Fetching data for username:", username.trim())
+      console.log("Fetching data for username:", username.trim())
 
       const response = await fetch("/api/github", {
         method: "POST",
@@ -26,19 +26,19 @@ export default function RoastReport() {
         body: JSON.stringify({ username: username.trim() }),
       })
 
-      console.log("[v0] API response status:", response.status)
+      console.log("API response status:", response.status)
 
       if (!response.ok) {
         const errorData = await response.json()
-        console.log("[v0] API error:", errorData)
+        console.log("API error:", errorData)
         throw new Error(errorData.error || "Failed to fetch data")
       }
 
       const githubData = await response.json()
-      console.log("[v0] Received GitHub data:", githubData)
+      console.log("Received GitHub data:", githubData)
       setData(githubData)
     } catch (error) {
-      console.error("[v0] Error fetching GitHub data:", error)
+      console.error("Error fetching GitHub data:", error)
       setError(error.message || "Failed to analyze GitHub profile")
     } finally {
       setLoading(false)
