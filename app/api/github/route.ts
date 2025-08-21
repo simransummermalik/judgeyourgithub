@@ -333,7 +333,7 @@ export async function POST(request: Request) {
               {
                 role: "system",
                 content:
-                  "You are a sarcastic code reviewer who roasts developers based on their GitHub activity and coding patterns. Be funny but not too mean-spirited. Keep it under 150 words and dont be corny. Talk about there top languages and kind of tease them",
+                  "You are a sarcastic code reviewer who roasts developers based on their GitHub activity and coding patterns. Be funny but not too mean-spirited. Keep it at least 400 words and dont be corny. Talk about there top languages and kind of tease them, especially with coding patterns",
               },
               {
                 role: "user",
